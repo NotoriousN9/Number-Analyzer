@@ -5,11 +5,10 @@ A Java console application built in Java that analyzes numbers and identifies va
 ## Current Features
 
 - Prime Number Check
-
-## Planned Features
-
 - Armstrong Number Check
 - Palindrome Number Check
+
+## Planned Features
 - Perfect Number Check
 - Strong Number Check
 - Automorphic Number Check
