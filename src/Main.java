@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int number;
+        int choice;
 
         //TODO: Keep on adding number identifiers
         System.out.println("""
@@ -17,8 +17,49 @@ public class Main {
                """);
 
         System.out.print("Enter your choice: ");
-        number = scanner.nextInt();
+        choice = scanner.nextInt();
 
-        System.out.println("You chose " + number);
+        System.out.println("You chose " + choice);
+
+
+        switch (choice) {
+            case 1:
+                System.out.print("Enter the number: ");
+                int number = scanner.nextInt();
+
+                if(isPrime(number)) {
+                    System.out.println("Prime Number");
+                }
+                else {
+                    System.out.println("Not a Prime Number");
+                }
+                break;
+
+            case 2:
+        }
     }
+
+
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+
+        if (number == 2) {
+            return true;
+        }
+
+        if (number % 2 == 0) {
+            return false;
+        }
+
+        int limit = (int) Math.sqrt(number);
+        for (int i = 3; i <= limit; i+= 2) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
