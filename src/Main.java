@@ -94,4 +94,17 @@ public class Main {
         return total == number;
     }
 
+
+    public static boolean isPalindrome(int number) {
+        int rev = 0;
+        int temp = number;
+
+        while(temp > 0) {
+            int lastDigit = temp % 10;
+            temp /= 10;
+            rev = rev * 10 + lastDigit;
+        }
+
+        return rev == number;
+    }
 }
