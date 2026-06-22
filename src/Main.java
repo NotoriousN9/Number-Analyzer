@@ -16,17 +16,18 @@ public class Main {
                 3. Palindrome Number Check
                """);
 
+
         System.out.print("Enter your choice: ");
         choice = scanner.nextInt();
 
         System.out.println("You chose " + choice);
 
+        System.out.print("Enter the number: ");
+        int number = scanner.nextInt();
+
 
         switch (choice) {
             case 1:
-                System.out.print("Enter the number: ");
-                int number = scanner.nextInt();
-
                 if(isPrime(number)) {
                     System.out.println("Prime Number");
                 }
@@ -36,6 +37,16 @@ public class Main {
                 break;
 
             case 2:
+                if(isArmstrong(number)) {
+                    System.out.println("Armstrong Number");
+                }
+                else {
+                    System.out.println("Not an Armstrong Number");
+                }
+                break;
+
+            default:
+                System.out.println("Choose correctly.");
         }
     }
 
@@ -60,6 +71,27 @@ public class Main {
             }
         }
         return true;
+    }
+
+    public static boolean isArmstrong(int number) {
+        int temp1 = number;
+        int temp2 = number;
+
+        int count = 0;
+        while (temp1 > 0) {
+            int remainder = temp1 % 10;
+            count++;
+            temp1 /= 10;
+        }
+
+        int total = 0;
+        while(temp2 > 0) {
+            int remainder = temp2 % 10;
+            temp2 /= 10;
+            total += (int) Math.pow(remainder, count);
+        }
+
+        return total == number;
     }
 
 }
