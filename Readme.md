@@ -4,12 +4,13 @@ A Java console application built in Java that analyzes numbers and identifies va
 
 ## Current Features
 
+- Analyze Number 
 - Prime Number Check
 - Armstrong Number Check
 - Palindrome Number Check
+- Perfect Number Check
 
 ## Planned Features
-- Perfect Number Check
 - Strong Number Check
 - Automorphic Number Check
 - Harshad Number Check
