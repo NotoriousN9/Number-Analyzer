@@ -39,6 +39,7 @@ public class Main {
                 System.out.println("Armstrong: " + (NumberProperties.isArmstrong(number) ? "Yes" : "No"));
                 System.out.println("Palindrome: " + (NumberProperties.isPalindrome(number) ? "Yes" : "No"));
                 System.out.println("Perfect: " + (NumberProperties.isPerfect(number) ? "Yes" : "No"));
+                System.out.println("Strong: " + (NumberProperties.isStrong(number) ? "Yes" : "No"));
                 break;
 
             case 2:
@@ -55,6 +56,10 @@ public class Main {
 
             case 5:
                 System.out.println(NumberProperties.isPerfect(number) ? "Perfect Number" : "Not a Perfect Number");
+                break;
+
+            case 6:
+                System.out.println(NumberProperties.isStrong(number) ? "Strong Number" : "Not a Strong Number");
                 break;
 
             default:

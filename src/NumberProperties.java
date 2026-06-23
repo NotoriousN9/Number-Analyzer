@@ -14,7 +14,7 @@ public class NumberProperties {
         }
 
         int limit = (int) Math.sqrt(number);
-        for (int i = 3; i <= limit; i+= 2) {
+        for (int i = 3; i <= limit; i += 2) {
             if (number % i == 0) {
                 return false;
             }
@@ -28,7 +28,7 @@ public class NumberProperties {
 
         int count = 0;
 
-        if(number <= 0) {
+        if (number <= 0) {
             return false;
         }
 
@@ -38,7 +38,7 @@ public class NumberProperties {
         }
 
         int total = 0;
-        while(temp2 > 0) {
+        while (temp2 > 0) {
             int remainder = temp2 % 10;
             temp2 /= 10;
             total += (int) Math.pow(remainder, count);
@@ -51,7 +51,7 @@ public class NumberProperties {
         int rev = 0;
         int temp = number;
 
-        while(temp > 0) {
+        while (temp > 0) {
             int lastDigit = temp % 10;
             temp /= 10;
             rev = rev * 10 + lastDigit;
@@ -63,7 +63,7 @@ public class NumberProperties {
     public static boolean isPerfect(int number) {
         int total = 0;
 
-        if(number == 1) {
+        if (number == 1) {
             return false;
         }
 
@@ -76,5 +76,24 @@ public class NumberProperties {
         return total == number;
     }
 
+    public static boolean isStrong(int number) {
+        int temp1 = number;
+        int total = 0;
+        int factorial = 1;
+
+        while (temp1 > 0) {
+            int lastDigit = temp1 % 10;
+
+            while (lastDigit > 0) {
+                factorial *= lastDigit;
+                lastDigit--;
+            }
+
+            total += factorial;
+            temp1 /= 10;
+        }
+
+        return total == number;
+    }
 
 }
