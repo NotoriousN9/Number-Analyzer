@@ -28,6 +28,7 @@ public class Main {
         int number = scanner.nextInt();
         if(number < 0) {
             System.out.println("Not Applicable.");
+            return;
         }
 
 
@@ -41,39 +42,19 @@ public class Main {
                 break;
 
             case 2:
-                if(isPrime(number)) {
-                    System.out.println("Prime Number");
-                }
-                else {
-                    System.out.println("Not a Prime Number");
-                }
+                System.out.println(isPrime(number) ? "Prime Number" : "Not a Prime Number");
                 break;
 
             case 3:
-                if(isArmstrong(number)) {
-                    System.out.println("Armstrong Number");
-                }
-                else {
-                    System.out.println("Not an Armstrong Number");
-                }
+                System.out.println(isArmstrong(number) ? "Armstrong Number" : "Not an Armstrong Number");
                 break;
 
             case 4:
-                if(isPalindrome(number)) {
-                    System.out.println("Palindrome Number");
-                }
-                else {
-                    System.out.println("Not a Palindrome Number");
-                }
+                System.out.println(isPalindrome(number) ? "Palindrome Number" : "Not a Palindrome Number");
                 break;
 
             case 5:
-                if(isPerfect(number)) {
-                    System.out.println("Perfect Number");
-                }
-                else {
-                    System.out.println("Not a Perfect Number");
-                }
+                System.out.println(isPerfect(number) ? "Perfect Number" : "Not a Perfect Number");
                 break;
 
             default:
@@ -109,8 +90,12 @@ public class Main {
         int temp2 = number;
 
         int count = 0;
+
+        if(number <= 0) {
+            return false;
+        }
+
         while (temp1 > 0) {
-            int remainder = temp1 % 10;
             count++;
             temp1 /= 10;
         }
@@ -146,7 +131,7 @@ public class Main {
             return false;
         }
 
-        for (int i = 1; i < Math.sqrt(number); i++) {
+        for (int i = 1; i < number; i++) {
             if (number % i == 0) {
                 total += i;
             }
